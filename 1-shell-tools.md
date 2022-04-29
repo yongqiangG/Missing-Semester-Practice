@@ -62,3 +62,12 @@ do
   ((count++))
 done
 ```
+
+> 3. 您的任务是编写一个命令，它可以递归地查找文件夹中所有的HTML文件，并将它们压缩成zip文件。注意，即使文件名中包含空格，您的命令也应该能够正确执行
+
+首先创建一个`html-root`文件夹，在里面创建html文件。
+注意指定`-d`分隔符为换行，避免空格的干扰。
+
+```
+find html-root/ -name "*.html"| xargs -d '\n' tar -cvzf html.zip
+```
